@@ -1,0 +1,21 @@
+.spacer{
+    flex: 1 1 auto
+}
+.space {
+    -webkit-box-flex: 50;
+    -ms-flex: 1  auto;
+    flex: 1  auto;
+}
+.pier{
+    margin-top: 46%;
+}
+.icon1{
+    color: #f7f3f3;
+}
+.icon2{
+    color: #f7f3f3;
+    background-color:rgba(238, 234, 234, 0);
+    text-emphasis-color: #f3f2f2;
+}
+
+

@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+  }
+  .liste{
+    text-align: center;
+    font-family: "century Gothic", "Helvetica Neve", Helvetica, sans serif;
+   
+    text-align:center;
+    color:#1e441e;
+    text-shadow: 5px 0 14px #0d745d;
+    empty-cells:hide;
+  }
+  table{
+    background-color: rgb(187, 166, 216);
+     
+  }
