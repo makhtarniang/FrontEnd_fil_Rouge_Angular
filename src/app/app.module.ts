@@ -6,10 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from'@angular/common/http';
 import { AppComponent } from './app.component';
-import { FormateurComponent } from './formateur/formateur.component';
-import { ApprenantComponent } from './apprenant/apprenant.component';
-import { CMComponent } from './cm/cm.component';
-import { AdminComponent } from './admin/admin.component';
+
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserComponent } from './user/user.component';
@@ -25,21 +22,19 @@ import { AngularMaterialModule } from 'src/appmateriel.module';
 import { AddProfilComponent } from './profil/add-profil/add-profil.component';
 import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
 import { AdduserComponent } from './user/adduser/adduser.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormateurComponent,
-    ApprenantComponent,
-    CMComponent,
-    AdminComponent,
     LoginComponent,
     UserComponent,
     ProfilComponent,
     AddProfilComponent,
     EditProfilComponent,
     AdduserComponent,
+    FooterComponent,
     
   ],
   imports: [

@@ -1,6 +1,4 @@
-body{
-    background-color: rgb(147, 28, 226);
-}
+
 .ajou{
     text-align: center;
     align:center;
@@ -18,4 +16,8 @@ body{
     margin-top: 70px;
     width: 30%;
     margin-left: 33%;
+   
+}
+.body{
+  background-color: rebeccapurple;
 }

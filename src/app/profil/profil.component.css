@@ -7,10 +7,11 @@ table {
    
     text-align:center;
     color:#1e441e;
-    text-shadow: 5px 0 14px #0d745d;
+    text-shadow: 5px 0 14px #c3ddd7;
     empty-cells:hide;
   }
   table{
-    background-color: rgb(187, 166, 216);
-     
+    background-color: rgb(7, 139, 91);
+     width: 70%;
+  margin-left: 13%;
   }

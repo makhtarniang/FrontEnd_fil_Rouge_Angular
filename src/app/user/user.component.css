@@ -1,7 +1,7 @@
 
 table {
     width: 100%;
-    background-color: rgb(185, 157, 230);
+    background-color: rgb(7, 139, 91);
   }
   .button{
     width: auto;
@@ -18,4 +18,8 @@ table {
 img{
   width: 120px;
   height: 100;
+}
+.icon{
+  margin-left: 97%;
+  width: 200px;
 }

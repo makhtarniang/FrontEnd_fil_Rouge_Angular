@@ -9,7 +9,7 @@ import { ProfilService  } from '../Profil.service';
 })
 export class ProfilComponent implements OnInit {
     
-    displayedColumns=['id','libelle','sup','mod'];
+    displayedColumns=['id','libelle'];
     dataSource :any;
     
 ngOnInit(): void {

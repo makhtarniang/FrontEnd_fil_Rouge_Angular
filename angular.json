@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "filRougeAngular"
+  "defaultProject": "filRougeAngular",
+  "cli": {
+    "analytics": "b24c5793-91db-408d-ab29-477137b3c32f"
+  }
 }
