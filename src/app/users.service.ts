@@ -18,4 +18,7 @@ constructor(private http:HttpClient) { }
   ajoutUser(data: any):Observable  <any>{
     return this.http.post ("/api/admin/users",data)
   }
+  updatUser(){
+       return this.http.put("/api/admin/users/{id}",DataCue);
+  }
 }

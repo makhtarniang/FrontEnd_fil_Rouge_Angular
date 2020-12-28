@@ -1,16 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from'@angular/common/http';
 import { AppComponent } from './app.component';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './entity/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { UserComponent } from './user/user.component';
-import { ProfilComponent } from './profil/profil.component';
+import { UserComponent } from './entity/user/user.component';
+import { ProfilComponent } from './entity/profil/profil.component';
 import { AuthService } from './auth.service';
 import { from } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,10 +18,20 @@ import {MatIconModule} from '@angular/material/icon';
 import { InterceptorProvider } from 'src/Interceptor';
 import {MatTableModule } from '@angular/material/table';
 import { AngularMaterialModule } from 'src/appmateriel.module';
-import { AddProfilComponent } from './profil/add-profil/add-profil.component';
-import { EditProfilComponent } from './profil/edit-profil/edit-profil.component';
-import { AdduserComponent } from './user/adduser/adduser.component';
+import { AddProfilComponent } from './entity/profil/add-profil/add-profil.component';
+import { EditProfilComponent } from './entity/profil/edit-profil/edit-profil.component';
+import { AdduserComponent } from './entity/user/adduser/adduser.component';
 import { FooterComponent } from './footer/footer.component';
+import { UpdateUserComponent } from './entity/user/update-user/update-user.component';
+import { ProfilSortieComponent } from './entity/profil-sortie/profil-sortie.component';
+import { PromoComponent } from './entity/promo/promo.component';
+import { CompetenceComponent } from './entity/competence/competence.component';
+import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-competence.component';
+
+
+
+
+
 
 
 @NgModule({
@@ -35,6 +44,16 @@ import { FooterComponent } from './footer/footer.component';
     EditProfilComponent,
     AdduserComponent,
     FooterComponent,
+    UpdateUserComponent,
+    ProfilSortieComponent,
+    PromoComponent,
+    CompetenceComponent,
+    GroupeCompetenceComponent,
+   
+  
+ 
+    
+    
     
   ],
   imports: [

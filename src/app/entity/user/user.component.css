@@ -1,0 +1,25 @@
+
+table {
+    width: 100%;
+    background-color: rgb(61, 66, 65);
+  }
+  .button{
+    width: auto;
+
+}
+.Lister{
+    text-align: center;
+    align:center;
+    text-align:center;
+    color:#6d13a8;
+    
+    
+}
+img{
+  width: 120px;
+  height: 100;
+}
+.icon{
+  margin-left: 97%;
+  width: 200px;
+}

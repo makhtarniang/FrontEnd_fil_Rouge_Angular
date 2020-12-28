@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap, map } from 'rxjs/operators';
-import { Profil } from 'src/model/Profil';
+
 import { from, Observable } from 'rxjs';
 
 @Injectable({
