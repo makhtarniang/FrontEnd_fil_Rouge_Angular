@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from'@angular/common/http';
 import { AppComponent } from './app.component';
-
 import { LoginComponent } from './entity/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserComponent } from './entity/user/user.component';
@@ -27,11 +25,11 @@ import { ProfilSortieComponent } from './entity/profil-sortie/profil-sortie.comp
 import { PromoComponent } from './entity/promo/promo.component';
 import { CompetenceComponent } from './entity/competence/competence.component';
 import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-competence.component';
-
-
-
-
-
+import { ReferencielComponent } from './entity/referenciel/referenciel.component';
+import { AddPromoComponent } from './entity/promo/add-promo/add-promo.component';
+import { AddCompetenceComponent } from './entity/competence/add-competence/add-competence.component';
+import { AddPrilSortieComponent } from './entity/profil-sortie/add-pril-sortie/add-pril-sortie.component';
+import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-groupe-competence/add-groupe-competence.component';
 
 
 @NgModule({
@@ -49,11 +47,11 @@ import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-com
     PromoComponent,
     CompetenceComponent,
     GroupeCompetenceComponent,
-   
-  
- 
-    
-    
+    ReferencielComponent,
+    AddPromoComponent,
+    AddCompetenceComponent,
+    AddPrilSortieComponent,
+    AddGroupeCompetenceComponent,
     
   ],
   imports: [

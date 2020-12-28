@@ -2,8 +2,8 @@
 .ajou{
     text-align: center;
     align:center;
-    text-align:center;
-    color:#13a862;
+    color:#13a8a1;
+    
     
     
 }
@@ -20,4 +20,7 @@
 }
 .body{
   background-color: rebeccapurple;
+}
+h1{
+    text-align: center;
 }

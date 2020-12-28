@@ -11,6 +11,11 @@ import { UserComponent } from './entity/user/user.component';
 import { ProfilSortieComponent } from './entity/profil-sortie/profil-sortie.component';
 import { PromoComponent } from './entity/promo/promo.component';
 import { CompetenceComponent } from './entity/competence/competence.component';
+import { ReferencielComponent } from './entity/referenciel/referenciel.component';
+import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-competence.component';
+import { AddPromoComponent } from './entity/promo/add-promo/add-promo.component';
+import { AddCompetenceComponent } from './entity/competence/add-competence/add-competence.component';
+import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-groupe-competence/add-groupe-competence.component';
 
 const routes: Routes = [
  
@@ -24,9 +29,12 @@ const routes: Routes = [
   { path:'ProfilSortie',component:ProfilSortieComponent},
   { path:'Promo',component:PromoComponent},
   { path:'competence',component:CompetenceComponent},
- 
-  
-
+  { path:'referenciel',component:ReferencielComponent},
+  { path:'GroupeCompetence',component:GroupeCompetenceComponent},
+  { path:'addPromo',component:AddPromoComponent},
+  { path:'addCompetence',component:AddCompetenceComponent},
+  { path:'addProfilSorti',component:AddProfilComponent},
+  { path:'addGroupeCompetence',component:AddGroupeCompetenceComponent}
 ];
 
 @NgModule({
