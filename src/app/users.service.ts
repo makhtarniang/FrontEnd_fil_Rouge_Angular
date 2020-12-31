@@ -14,7 +14,6 @@ constructor(private http:HttpClient) { }
     return this.http.get<any>("/api/admin/users");
   }
 
-  
   ajoutUser(data: any):Observable  <any>{
     return this.http.post ("/api/admin/users",data)
   }

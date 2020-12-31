@@ -8,9 +8,9 @@ import { UserService } from 'src/app/users.service';
   styleUrls: ['./adduser.component.css']
 })
 export class AdduserComponent implements OnInit {
-
   form: any;
-
+  avatar:any;
+  url="../assets/img/ico.jpg"
   constructor(private formBuilder:FormBuilder,private service: UserService ) { }
 
   ngOnInit(): void {
@@ -26,8 +26,6 @@ export class AdduserComponent implements OnInit {
         email: new FormControl('',[
           Validators.required
         ]),
-        
-       
         avatar: new FormControl('',[
          
         ]),
@@ -50,5 +48,16 @@ export class AdduserComponent implements OnInit {
         console.log(response);
       }
     );
+  }
+  selectedFile(files: FileList,event:any)
+  {
+    this.avatar=files.item(0);
+    let reader=new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload =(event:any) =>
+    {
+      this.url=event.target.result
+    }
+    
   }
 }

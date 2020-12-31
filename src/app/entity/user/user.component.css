@@ -1,7 +1,8 @@
 
 table {
-    width: 100%;
-    background-color: rgb(61, 66, 65);
+    width: 90%;
+    background-color: rgb(253, 253, 253);
+    margin-left: 4.5%;
   }
   .button{
     width: auto;
@@ -11,15 +12,25 @@ table {
     text-align: center;
     align:center;
     text-align:center;
-    color:#6d13a8;
+    color:#07be87;
     
     
 }
 img{
-  width: 120px;
-  height: 100;
+  width: 100px;
+  height: 100px;
 }
 .icon{
   margin-left: 97%;
   width: 200px;
+}
+th{
+  background-color: #07be87;
+}
+.pagi{
+  width: 90%;
+  margin-left: 4.5%;
+}
+.mat-form-field {
+  margin-right: 12px;
 }

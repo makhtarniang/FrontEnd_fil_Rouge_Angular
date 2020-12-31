@@ -14,7 +14,7 @@
           <input type="text" class="form-control" formControlName="email">
         </div>
         <div class="form-group">
-          <label for="sel1">Type:</label>
+          <label for="sel1">Profil:</label>
           <select class="form-control" formControlName="profil_id">
             <option value="Admin">Admin</option>
             <option value="Formateur">Formateur</option>
@@ -23,8 +23,13 @@
           </select>
         </div>
         Avatar:
-      <input type="file" class="form-control-file border" formControlName="avatar">
+       
+ <p class="fil"><input type="file" class="form-control" id="customFile" formControlName="avatar"></p>
       <div class="btn">
           <button click="ajouUser()" class="btn btn-secondary">Valider</button>
       </div>
 </form>
+<div class="image">
+  <img [src]="url" alt="">
+</div>
+(change)="selectedFile($event.target.files,$event)" 

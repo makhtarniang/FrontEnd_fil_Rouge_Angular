@@ -21,3 +21,15 @@
 .body{
   background-color: rebeccapurple;
 }
+img{
+  width: 100px;
+  height: 100px; 
+  margin-top: -900px;
+  margin-left: 70%;
+}
+label{
+  color: #13a862;
+}
+.fil{
+  width: 30%;
+}

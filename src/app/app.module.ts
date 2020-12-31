@@ -28,8 +28,11 @@ import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-com
 import { ReferencielComponent } from './entity/referenciel/referenciel.component';
 import { AddPromoComponent } from './entity/promo/add-promo/add-promo.component';
 import { AddCompetenceComponent } from './entity/competence/add-competence/add-competence.component';
-import { AddPrilSortieComponent } from './entity/profil-sortie/add-pril-sortie/add-pril-sortie.component';
+
 import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-groupe-competence/add-groupe-competence.component';
+import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sortis/add-profil-sortis.component';
+import { AddRefeferencielComponent } from './entity/referenciel/add-refeferenciel/add-refeferenciel.component';
+import { AccuielComponent } from './entity/accuiel/accuiel.component';
 
 
 @NgModule({
@@ -50,8 +53,10 @@ import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-gro
     ReferencielComponent,
     AddPromoComponent,
     AddCompetenceComponent,
-    AddPrilSortieComponent,
     AddGroupeCompetenceComponent,
+    AddProfilSortisComponent,
+    AddRefeferencielComponent,
+    AccuielComponent,
     
   ],
   imports: [

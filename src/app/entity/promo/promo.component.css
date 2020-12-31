@@ -5,3 +5,26 @@
     text-align: center;
     color: rgb(31, 173, 138);
 }
+
+table{
+    width: 60%;
+    margin-left: 20%;
+    border: 2px;
+}
+.pagination{
+    margin-left: 63%;
+}
+.tr1{
+    background-color: rgb(74, 167, 86);
+    width: 30%;
+    text-align: center;
+    text-emphasis: none;
+}
+td{
+    text-align: center;
+    color: #bb082f;
+}
+
+.attant{
+    background-color:rgba(156, 13, 13, 0);
+}

@@ -24,5 +24,16 @@ export class ProfilService {
   update( data:any): Observable<any> {
     return this.http.put('/api/admin/profils/'+data.id, data);
     }
+
+    ajoutProfilSortie(data: any):Observable  <any>{
+      return this.http.post("/api/admin/profilsorties",data)
+    }
+
+    affichProfilSortie():any
+  {
+    return this.http.get<any>("/api/admin/profilsorties").pipe(tap( data =>{
+      return data;
+    }, err => {}));
+  }
 }
 

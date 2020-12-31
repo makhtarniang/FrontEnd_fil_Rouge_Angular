@@ -1,12 +1,32 @@
 .h11{
     text-align: center;
-    color: rgb(29, 168, 145);
+    color: rgb(19, 168, 69);
 }
 .btn{
-    margin-left: 70%;
+    margin-left: 74%;
     margin-top:-30px
 }
 .pro{
     text-align: center;
     color: rgb(31, 173, 138);
+}
+table{
+    width: 90%;
+    margin-left: 4%;
+    border: 2px;
+}
+
+.pagination{
+    margin-left: 76%;
+}
+.tr1{
+    border: 40px;
+    background-color: rgb(74, 167, 86);
+}
+.ch{
+    margin-left: 4.5%;
+}
+.pagi{
+    width: 91%;
+    margin-left: 4%;
 }

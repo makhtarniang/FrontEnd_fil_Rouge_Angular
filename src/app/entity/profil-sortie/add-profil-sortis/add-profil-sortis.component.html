@@ -1,0 +1,10 @@
+<h1 class="ajou">new Profil Sortie</h1>
+<form class="form" [formGroup]="form"(ngSubmit)="ajoutProfilSortie(form)">
+      <div class="form-group">
+        <h2 class="lib"><label for="usr">Libelle:</label></h2>
+          <input type="text" class="form-control" formControlName="libelle">
+        </div>
+      <div class="btn">
+          <button click="ajoutProfilSortie()"class="btn btn-secondary">Valider</button>
+      </div>
+</form>

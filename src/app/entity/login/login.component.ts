@@ -1,4 +1,6 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { from } from 'rxjs';
 import { AuthService } from '../../auth.service';
 @Component({
@@ -12,7 +14,7 @@ export class LoginComponent implements OnInit {
     email:'',
     password:'',
   }
-  constructor(private _auth: AuthService){}
+  constructor(private _auth: AuthService ,private rout:Router ){}
   
   ngOnInit(): void {
   }
@@ -23,22 +25,11 @@ loginUser(){
       console.log(res)
       const token=res.token;
 localStorage.setItem('token',token);
+this.rout.navigate(['/footer'])
     },
     err=>console.log(err)
   )
 }
-/*constructor (private con:ConnexionService,private router:Router)
-login(credentials:any){
-this.con.GetToken(credentials).subscribe(
-(response:any)=>
-{
-const token=response.token;
-localStorage.setItem('token',token);
-this.router.navigate(['profils']);
-},
-(error:any)=>
-{}
-)*/
 }
 
 

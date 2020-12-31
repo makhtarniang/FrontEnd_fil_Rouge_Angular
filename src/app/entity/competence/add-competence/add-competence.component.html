@@ -1,1 +1,84 @@
-<h1>Add Competence</h1>
+
+<h1 class="ajou">Creation Competence </h1>
+<form class="form"  >
+    
+      
+        <div class="form-group">
+          <label for="pwd">Libelle:</label>
+          <input type="text" class="form-control" formControlName="email">
+        </div>
+       
+        <div class="form-group">
+          <label for="sel1">Groupe de compétences:</label>
+          <select class="form-control" formControlName="profil_id">
+            <option value="Admin">Compt1</option>
+            <option value="Formateur">Com</option>
+          </select>
+        </div>
+
+        <div class="container">
+          <div class="row">
+              <div class="col-md-6">
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Niveau 1
+                                  </a>
+                              </h4>
+                          </div>
+                          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                  <p>Groupe d'actions à réaliser
+                                    A partir d'un schéma physique
+                                    de données et dans le contexte
+                                    d'un besoin client décrit  </p>
+                              </div>
+                          </div>
+                      </div>
+                     
+                      <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Niveau 2
+                                  </a>
+                              </h4>
+                          </div>
+                          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                  <p>Critères d'évaluation
+                                    La BD est créée à l'aide d'un
+                                    script sans erreur et les
+                                    données sont insérées à l'aide
+                                    d'un script sans erreur</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="panel panel-default">
+                          <div class="panel-heading" role="tab" id="headingThree">
+                              <h4 class="panel-title">
+                                  <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Niveau 3
+                                  </a>
+                              </h4>
+                          </div>
+                          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                              <div class="panel-body">
+                                  <p>Critères d'évaluation
+                                    La BD est créée à l'aide d'un
+                                    script sans erreur et les
+                                    données sont insérées à l'aide
+                                    d'un script sans erreur </p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="btn">
+          <button class="btn btn-secondary">Valider</button>
+      </div>
+</form>

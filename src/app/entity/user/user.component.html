@@ -1,20 +1,13 @@
 <h1 class="Lister">Lister Utilisateur</h1>
 
-
-
 <div class="mat-elevation-z8">
  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-<ng-container matColumnDef="id">
-<th mat-header-cell *matHeaderCellDef>ID</th>
-<td mat-cell *matCellDef="let user"> {{user.id}} </td>
-</ng-container>
 
 <!-- Name Column -->
 <ng-container matColumnDef="avatar">
 <th mat-header-cell *matHeaderCellDef> Avatar </th>
-<td mat-cell *matCellDef="let user"> <img src="data:image/jpeg;base64,{{ user.avatar}}"  alt=""/></td>
+<td mat-cell *matCellDef="let user"> <img src="data:image/jpeg;base64,{{ user.avatar}}"  alt="aucune image"/></td>
 </ng-container>
-
 <!-- Name Column -->
 <ng-container matColumnDef="nom">
   <th mat-header-cell *matHeaderCellDef> Nom </th>
@@ -54,5 +47,5 @@
 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+<p class="pagi"><mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator></p>
 </div>

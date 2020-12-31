@@ -7,15 +7,15 @@
     
     
 }
-.btn{
-   margin-top: 20px;
+.btn1{
+   margin-top: -13px;
    margin-left: 37%;
  
 }
 .form{
     margin-top: 70px;
     width: 30%;
-    margin-left: 33%;
+    margin-left: 15%;
    
 }
 .body{
@@ -23,4 +23,31 @@
 }
 h1{
     text-align: center;
+}
+.bar2{
+    border: rgb(26, 226, 159);
+    border: 3px rgb(14, 182, 182) dashed;
+    width: 40%;
+    height: 20%;
+    margin-left: 52%;
+    margin-top: -30%;
+}
+.app{
+   text-align: center;
+}
+.form{
+    margin-top: -14px;
+}
+.put{
+    width: 67%;
+    margin-left: 15%;
+    margin-top:-76px;
+}
+.mail{
+    margin-left: 15%;
+}
+.fil{
+    width: 30%;
+    margin-left: 120%;
+  margin-top: -90%;
 }

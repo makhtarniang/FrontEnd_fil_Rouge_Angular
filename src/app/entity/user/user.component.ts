@@ -10,7 +10,7 @@ import { UserService } from '../../users.service';
 export class UserComponent implements OnInit {
 
 
-    displayedColumns=['id','avatar','nom','prenom','email','type','sup','mod'];
+    displayedColumns=['avatar','nom','prenom','email','type','sup','mod'];
     dataSource :any;
   
  
