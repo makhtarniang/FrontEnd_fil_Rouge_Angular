@@ -20,6 +20,7 @@ import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sort
 import { componentFactoryName } from '@angular/compiler';
 
 const routes: Routes = [
+  
   {
     path:'',
     redirectTo:'login',
@@ -32,6 +33,7 @@ const routes: Routes = [
          redirectTo:'listerUser',
          pathMatch:'full'
        },
+     
       { path:'' ,component:LoginComponent},
       { path:'listerProfil',component:ProfilComponent},
       { path:'listerUser',component:UserComponent},
@@ -60,6 +62,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+ // providers: [AuthGuard]
 })
 export class AppRoutingModule { }

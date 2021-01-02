@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
@@ -28,13 +29,14 @@ import { GroupeCompetenceComponent } from './entity/groupe-competence/groupe-com
 import { ReferencielComponent } from './entity/referenciel/referenciel.component';
 import { AddPromoComponent } from './entity/promo/add-promo/add-promo.component';
 import { AddCompetenceComponent } from './entity/competence/add-competence/add-competence.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-groupe-competence/add-groupe-competence.component';
 import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sortis/add-profil-sortis.component';
 import { AddRefeferencielComponent } from './entity/referenciel/add-refeferenciel/add-refeferenciel.component';
 import { AccuielComponent } from './entity/accuiel/accuiel.component';
-
-
+import { ConfirmationDialogComponent } from './entity/confirmation-dialog/confirmation-dialog.component';
+import { ConfirmationDialog } from './server/confirmation-dialog.service';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,11 +59,14 @@ import { AccuielComponent } from './entity/accuiel/accuiel.component';
     AddProfilSortisComponent,
     AddRefeferencielComponent,
     AccuielComponent,
+    ConfirmationDialogComponent,
+   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     NgbModule,
     FormsModule,
     HttpClientModule,
@@ -71,9 +76,14 @@ import { AccuielComponent } from './entity/accuiel/accuiel.component';
     MatTableModule,
     AngularMaterialModule,
     ReactiveFormsModule,
+    MatPaginatorModule,
+    
+    
+    
   ],
-  providers: [InterceptorProvider],
+  providers: [InterceptorProvider,ConfirmationDialog],
   
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ ConfirmationDialogComponent ],
 })
 export class AppModule { }

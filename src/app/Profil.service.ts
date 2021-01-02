@@ -35,5 +35,8 @@ export class ProfilService {
       return data;
     }, err => {}));
   }
+  archivePorfilSortie(id: number): Observable<any> {
+    return this.http.delete<any>(`${'api/admin/profilsorties/'}${id}`);
+  }
 }
 

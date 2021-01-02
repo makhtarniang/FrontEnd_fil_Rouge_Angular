@@ -24,7 +24,9 @@
 							</span>
 						</div>
 						<div class="wrap-input100 validate-input" data-validate = "Username is required">
-							<input [(ngModel)]="loginUserData.email" class="input100" type="text" placeholder="entrer votre email" name="email" required >
+				<p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
+					<input [(ngModel)]="loginUserData.email" class="input100" type="text" placeholder="entrer votre email" name="email" required >
+				</p>
 							<span class="focus-input100"></span>
 						</div>
 						
@@ -37,20 +39,19 @@
 								Oublier?
 							</a>
 						</div>
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<input [(ngModel)]="loginUserData.password"  class="input100" type="password" placeholder="entrer voter mot de passe" name="password" required>
-							
+						<div  class="wrap-input100 validate-input" data-validate = "Password is required">
+                       <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
+
+						<input [(ngModel)]="loginUserData.password"  class="input100" type="password" placeholder="entrer voter mot de passe" name="password" required>
+					   </p>
 							<span class="focus-input100"></span>
 						</div>
-	
 						<div class="container-login100-form-btn m-t-17">
 							<button (click)="loginUser()"class="login100-form-btn">
 								se connecter
 							</button>
 						</div>
 						<div class="w-full text-center p-t-55">
-							
-	
 							<a href="#" class="txt2 bo1">
 								Sign up now
 							</a>

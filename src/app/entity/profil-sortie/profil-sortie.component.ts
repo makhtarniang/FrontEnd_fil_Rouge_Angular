@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfilService  } from '../../Profil.service';
-
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-profil-sortie',
   templateUrl: './profil-sortie.component.html',
@@ -8,9 +9,8 @@ import { ProfilService  } from '../../Profil.service';
 })
 export class ProfilSortieComponent implements OnInit {
   displayedColumns=['libelle','sup','mod'];
-  dataSource :any;
- 
-
+  dataSource :any; 
+  currentUser: any ="";
   ngOnInit(): void {
 
   this.userservice.affichProfilSortie().subscribe(
@@ -25,6 +25,21 @@ export class ProfilSortieComponent implements OnInit {
       console.log(error);
     }
   )
+
+  
   }
-  constructor(private userservice: ProfilService ){}
+  removePorfilSortie(id: number): void{
+    this.userservice.archivePorfilSortie(id).subscribe(
+      (data: any ) => {
+        this.currentUser = data;
+        console.log(data);
+      },
+      (error: any) => {
+        console.log(error);
+      });
+  }
+  openModal(content:any){
+    this.modalService.open(content,{ariaLabelledBy:'modal-basic-title',size:'lg'})
+      }
+  constructor(private userservice: ProfilService ,private router: Router,private modalService:NgbModal){}
 }
