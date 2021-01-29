@@ -19,13 +19,13 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
   logout() {
-    localStorage.removeItem('user');
+    localStorage.removeItem('token');
     this.router.navigate(['/login']);
     this.modalService.dismissAll();
     console.log('Tentative de déconnexion');
   }
  
   openModal(content:any){
-this.modalService.open(content,{ariaLabelledBy:'modal-basic-title',size:'lg'})
+  this.modalService.open(content,{ariaLabelledBy:'modal-basic-title',size:'lg'})
   }
 }

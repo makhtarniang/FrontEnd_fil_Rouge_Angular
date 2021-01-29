@@ -17,7 +17,8 @@ import { AddCompetenceComponent } from './entity/competence/add-competence/add-c
 import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-groupe-competence/add-groupe-competence.component';
 import { AddRefeferencielComponent } from './entity/referenciel/add-refeferenciel/add-refeferenciel.component';
 import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sortis/add-profil-sortis.component';
-import { componentFactoryName } from '@angular/compiler';
+import { AuthGuard } from './service/auth/auth.guard';
+import { AccuielComponent } from './entity/accuiel/accuiel.component';
 
 const routes: Routes = [
   
@@ -30,28 +31,29 @@ const routes: Routes = [
      path:'footer',component:FooterComponent, children:[
        {
          path: '',
-         redirectTo:'listerUser',
+         redirectTo:'accuil',
          pathMatch:'full'
        },
      
       { path:'' ,component:LoginComponent},
-      { path:'listerProfil',component:ProfilComponent},
-      { path:'listerUser',component:UserComponent},
+      { path:'listerProfil',component:ProfilComponent ,canActivate:[AuthGuard]},
+      { path:'listerUser',component:UserComponent ,canActivate:[AuthGuard]},
       { path:'pageDaccuiel',component:FooterComponent},
-      { path:'add-profil',component:AddProfilComponent},
-      { path:'editProfil',component:EditProfilComponent},
-      { path:'addUser' ,component:AdduserComponent},
-      { path:'ProfilSortie',component:ProfilSortieComponent},
-      { path:'Promo',component:PromoComponent},
-      { path:'competence',component:CompetenceComponent},
-      { path:'referenciel',component:ReferencielComponent},
-      { path:'GroupeCompetence',component:GroupeCompetenceComponent},
-      { path:'addPromo',component:AddPromoComponent},
-      { path:'addCompetence',component:AddCompetenceComponent},
-      { path:'addGroupeCompetence',component:AddGroupeCompetenceComponent},
-      { path:'addPS',component:AddProfilSortisComponent},
-      { path:'addReferenciel',component:AddRefeferencielComponent},
-      { path:'foter',component:FooterComponent}
+      { path:'add-profil',component:AddProfilComponent,canActivate:[AuthGuard]},
+      { path:'editProfil',component:EditProfilComponent,canActivate:[AuthGuard]},
+      { path:'addUser' ,component:AdduserComponent,canActivate:[AuthGuard]},
+      { path:'ProfilSortie',component:ProfilSortieComponent,canActivate:[AuthGuard]},
+      { path:'Promo',component:PromoComponent,canActivate:[AuthGuard]},
+      { path:'competence',component:CompetenceComponent,canActivate:[AuthGuard]},
+      { path:'referenciel',component:ReferencielComponent,canActivate:[AuthGuard]},
+      { path:'GroupeCompetence',component:GroupeCompetenceComponent,canActivate:[AuthGuard]},
+      { path:'addPromo',component:AddPromoComponent,canActivate:[AuthGuard]},
+      { path:'addCompetence',component:AddCompetenceComponent,canActivate:[AuthGuard]},
+      { path:'addGroupeCompetence',component:AddGroupeCompetenceComponent,canActivate:[AuthGuard]},
+      { path:'addPS',component:AddProfilSortisComponent,canActivate:[AuthGuard]},
+      { path:'addReferenciel',component:AddRefeferencielComponent,canActivate:[AuthGuard]},
+      { path:'foter',component:FooterComponent,canActivate:[AuthGuard]},
+      { path:'accuil',component:AccuielComponent,canActivate:[AuthGuard]},
       
      ],
   },

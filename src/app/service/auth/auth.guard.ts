@@ -1,25 +1,24 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot,Router} from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Router} from '@angular/router';
 import { Observable } from 'rxjs';
-import { isNull } from 'util';
+import { AuthGurdService } from '../../server/auth-gurd.service';
 
-@Injectable()
-export class AuthGuard implements CanActivate {
-  constructor(
-    private router: Router
-  ) { }
-  
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean{
-      // Récupération de l'utilisateur connecté
-    const password = isNull(localStorage.getItem('user'));
-    if (!password) {
-      // Si pas d'utilisateur connecté : redirection vers la page de login
-      console.log('Vous n\'êtes pas connectés');
-      this.router.navigate(['/login']);
-    }
-    return password;
+@Injectable(
+  {
+    providedIn: 'root'
   }
-  
+)
+export class AuthGuard implements CanActivate {
+
+  constructor(private auth:AuthGurdService,private router: Router)  { }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    if(this.auth.connected()){
+      return true
+    }
+    else{
+      this.router.navigate(["/login"]);
+      return false;
+    }
+  }
 }

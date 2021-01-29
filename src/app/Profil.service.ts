@@ -38,5 +38,12 @@ export class ProfilService {
   archivePorfilSortie(id: number): Observable<any> {
     return this.http.delete<any>(`${'api/admin/profilsorties/'}${id}`);
   }
+
+affichCompetence():any
+{
+  return this.http.get<any>("/api/admin/competences").pipe(tap( data =>{
+    return data;
+  }, err => {}));
+}
 }
 

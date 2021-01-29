@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ConfirmationDialog } from './server/confirmation-dialog.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-root',

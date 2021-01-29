@@ -26,6 +26,4 @@ constructor(private http:HttpClient,private modalService: NgbModal) { }
     return this.http.delete<any>(`${'api/admin/user/'}${id}`);
   }
  
-  
- 
 }

@@ -34,8 +34,6 @@ import { AddGroupeCompetenceComponent } from './entity/groupe-competence/add-gro
 import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sortis/add-profil-sortis.component';
 import { AddRefeferencielComponent } from './entity/referenciel/add-refeferenciel/add-refeferenciel.component';
 import { AccuielComponent } from './entity/accuiel/accuiel.component';
-import { ConfirmationDialogComponent } from './entity/confirmation-dialog/confirmation-dialog.component';
-import { ConfirmationDialog } from './server/confirmation-dialog.service';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 @NgModule({
   declarations: [
@@ -59,8 +57,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
     AddProfilSortisComponent,
     AddRefeferencielComponent,
     AccuielComponent,
-    ConfirmationDialogComponent,
-   
+    
     
   ],
   imports: [
@@ -81,9 +78,9 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
     
     
   ],
-  providers: [InterceptorProvider,ConfirmationDialog],
+  providers: [InterceptorProvider],
   
   bootstrap: [AppComponent],
-  entryComponents: [ ConfirmationDialogComponent ],
+  entryComponents: [ ],
 })
 export class AppModule { }

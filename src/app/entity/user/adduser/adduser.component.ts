@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/users.service';
-
+import { NgForm} from  '@angular/forms';
+import { ProfilSortieComponent } from '../../profil-sortie/profil-sortie.component';
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
   styleUrls: ['./adduser.component.css']
 })
 export class AdduserComponent implements OnInit {
+  submitted=false
   form: any;
   avatar:any;
+  
+  isValidatFormSubmid =false
   url="../assets/img/ico.jpg"
   constructor(private formBuilder:FormBuilder,private service: UserService ) { }
 
@@ -32,9 +36,27 @@ export class AdduserComponent implements OnInit {
         profil_id: new FormControl('',[
          
         ]),
-    })
-    
+    }) 
   }
+   // convenience getter for easy access to form fields
+   get f() { return this.form.controls; }
+
+   onSubmit() {
+       this.submitted = true;
+
+       // stop here if form is invalid
+       if (this.form.invalid) {
+           return;
+       }
+
+       // display form values on success
+       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 8));
+   }
+
+   onReset() {
+       this.submitted = false;
+       this.form.reset();
+   }
   ajouUser(data:any){
     const formdata = new FormData();
     formdata.append('nom',this.form.value['nom'])
@@ -60,4 +82,19 @@ export class AdduserComponent implements OnInit {
     }
     
   }
+  onFormSubmit(form:NgForm){
+this.isValidatFormSubmid = false;
+ if(form.valid){
+   this.isValidatFormSubmid =true;
+ }
+ else{
+   return;
+ }
+ 
+ let nom=form.controls['nom'].value;
+ let prenom=form.controls['prenom'].value;
+ let email=form.controls['email'].value;
+
+  }
+
 }

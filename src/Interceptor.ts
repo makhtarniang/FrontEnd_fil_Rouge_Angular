@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class Interceptor  implements HttpInterceptor {
+  
 
     constructor(private jwtServices:JwtService){}
 

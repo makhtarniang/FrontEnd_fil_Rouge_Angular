@@ -1,19 +1,19 @@
 {{form.value | json}}
 <h1 class="ajou">Ajouter Utilisateur</h1>
-<form class="form" [formGroup]="form" (ngSubmit)="ajouUser(form)" >
-      <div class="form-group">
+<form class="form" [formGroup]="form" (ngSubmit)="ajouUser(form)">
+      <div class="form-group" >
           <label for="usr">Nom:</label>
-          <input type="text" class="form-control" formControlName="nom">
+          <input type="text" class="form-control" formControlName="nom" >
         </div>
         <div class="form-group">
           <label for="pwd">Prenom:</label>
-          <input type="text" class="form-control" formControlName="prenom">
+          <input type="text" class="form-control" formControlName="prenom"[ngClass]="{ 'is-invalid': submitted && f.prenom.errors }">
         </div>
         <div class="form-group">
           <label for="pwd">Email:</label>
-          <input type="text" class="form-control" formControlName="email">
+          <input type="text" class="form-control" formControlName="email"[ngClass]="{ 'is-invalid': submitted && f.email.errors }">
         </div>
-        <div class="form-group">
+        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.profil_id.errors }">
           <label for="sel1">Profil:</label>
           <select class="form-control" formControlName="profil_id">
             <option value="Admin">Admin</option>
@@ -23,13 +23,11 @@
           </select>
         </div>
         Avatar:
-       
- <p class="fil"><input type="file" class="form-control" id="customFile" formControlName="avatar"></p>
+ <p class="fil"><input (change)="selectedFile($event.target.files,$event)"  type="file" class="form-control" id="customFile" formControlName="avatar"></p>
       <div class="btn">
-          <button click="ajouUser()" class="btn btn-secondary">Valider</button>
+      <button click="ajouUser()" class="btn btn-secondary">Valider</button>
       </div>
 </form>
 <div class="image">
   <img [src]="url" alt="">
 </div>
-(change)="selectedFile($event.target.files,$event)" 

@@ -30,3 +30,65 @@ table{
     width: 91%;
     margin-left: 4%;
 }
+
+.ajou{
+    text-align: center;
+    align:center;
+    color:#13a8a1;
+    
+    
+    
+}
+
+.form{
+    margin-top: 70px;
+    width: 30%;
+    margin-left: 33%;
+   
+}
+
+h1{
+    text-align: center;
+    font-size: 590px;
+    font-size: large;
+}
+.btn{
+    margin-left: 30%;
+    margin-top: -6px;
+}
+.lib{
+    text-align: center;
+}
+
+.h11{
+    text-align: center;
+    color: rgb(19, 168, 69);
+}
+.btn{
+    margin-left: 74%;
+    margin-top:-30px
+}
+.pro{
+    text-align: center;
+    color: rgb(31, 173, 138);
+}
+table{
+    width: 90%;
+    margin-left: 4%;
+    border: 2px;
+}
+
+.pagination{
+    margin-left: 76%;
+}
+.tr1{
+    border: 40px;
+    background-color: rgb(74, 167, 86);
+}
+.ch{
+    margin-left: 4.5%;
+}
+.pagi{
+    width: 91%;
+    margin-left: 4%;
+}

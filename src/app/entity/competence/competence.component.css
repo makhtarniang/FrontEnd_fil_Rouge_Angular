@@ -12,8 +12,9 @@ table{
     margin-left: 4%;
     border: 2px;
 }
-.pagination{
-    margin-left: 76%;
+.pagi{
+    margin-left: 3%;
+    width: 91%;
 }
 .tr1{
     border: 40px;
