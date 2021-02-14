@@ -1,0 +1,41 @@
+
+.ajou{
+    text-align: center;
+    align:center;
+    text-align:center;
+    color:#13a862;
+    
+    
+}
+.btn{
+   margin-top: 20px;
+   margin-left: 37%;
+ 
+}
+.form{
+    margin-top: 70px;
+    width: 30%;
+    margin-left: 33%;
+   
+}
+.body{
+  background-color: rebeccapurple;
+}
+img{
+  width: 100px;
+  height: 100px; 
+  margin-top: -900px;
+  margin-left: 70%;
+}
+label{
+  color: #13a862;
+}
+.fil{
+  width: 30%;
+}
+.invalid-feedback{
+  color: #e6240a;
+}
+.sp{
+  color: #a81313;
+}

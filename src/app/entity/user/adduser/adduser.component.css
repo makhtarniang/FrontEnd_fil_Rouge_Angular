@@ -33,3 +33,9 @@ label{
 .fil{
   width: 30%;
 }
+.invalid-feedback{
+  color: #e6240a;
+}
+.sp{
+  color: #a81313;
+}

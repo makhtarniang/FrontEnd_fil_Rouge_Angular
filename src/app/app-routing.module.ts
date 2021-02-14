@@ -19,6 +19,8 @@ import { AddRefeferencielComponent } from './entity/referenciel/add-refeferencie
 import { AddProfilSortisComponent } from './entity/profil-sortie/add-profil-sortis/add-profil-sortis.component';
 import { AuthGuard } from './service/auth/auth.guard';
 import { AccuielComponent } from './entity/accuiel/accuiel.component';
+import { UpdateUserComponent } from './entity/user/update-user/update-user.component';
+import { UpdatProfilSortieComponent } from './entity/profil-sortie/updat-profil-sortie/updat-profil-sortie.component';
 
 const routes: Routes = [
   
@@ -31,18 +33,33 @@ const routes: Routes = [
      path:'footer',component:FooterComponent, children:[
        {
          path: '',
-         redirectTo:'accuil',
+         redirectTo:'addUser',
          pathMatch:'full'
        },
-     
+       { 
+         path:'listerUser',
+         children:[
+          { path: '', component:UserComponent ,canActivate:[AuthGuard]},
+          { path :'update/:id', component: UpdateUserComponent},
+        ]
+      },
+
+      
+      {
+        path:'ProfilSortie',
+        children :[
+          { path:'',component:ProfilSortieComponent ,canActivate:[AuthGuard]},
+          { path :'updatePrifilSortie/:id',component:UpdatProfilSortieComponent},
+        ]
+      },
+      
       { path:'' ,component:LoginComponent},
       { path:'listerProfil',component:ProfilComponent ,canActivate:[AuthGuard]},
-      { path:'listerUser',component:UserComponent ,canActivate:[AuthGuard]},
       { path:'pageDaccuiel',component:FooterComponent},
       { path:'add-profil',component:AddProfilComponent,canActivate:[AuthGuard]},
       { path:'editProfil',component:EditProfilComponent,canActivate:[AuthGuard]},
       { path:'addUser' ,component:AdduserComponent,canActivate:[AuthGuard]},
-      { path:'ProfilSortie',component:ProfilSortieComponent,canActivate:[AuthGuard]},
+      //{ path:'ProfilSortie',component:ProfilSortieComponent,canActivate:[AuthGuard]},
       { path:'Promo',component:PromoComponent,canActivate:[AuthGuard]},
       { path:'competence',component:CompetenceComponent,canActivate:[AuthGuard]},
       { path:'referenciel',component:ReferencielComponent,canActivate:[AuthGuard]},

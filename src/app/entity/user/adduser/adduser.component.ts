@@ -3,6 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { UserService } from 'src/app/users.service';
 import { NgForm} from  '@angular/forms';
 import { ProfilSortieComponent } from '../../profil-sortie/profil-sortie.component';
+import { ProfilService } from 'src/app/Profil.service';
+import { data } from 'jquery';
+
 @Component({
   selector: 'app-adduser',
   templateUrl: './adduser.component.html',
@@ -10,15 +13,24 @@ import { ProfilSortieComponent } from '../../profil-sortie/profil-sortie.compone
 })
 export class AdduserComponent implements OnInit {
   submitted=false
-  form: any;
+  form: FormGroup | any;
   avatar:any;
-  
+ image:any
+ 
+  //newUser= new  ();
   isValidatFormSubmid =false
   url="../assets/img/ico.jpg"
-  constructor(private formBuilder:FormBuilder,private service: UserService ) { }
+  message :any;
+  profils:any
+  constructor(private formBuilder:FormBuilder,private service: UserService ,private ProfileService:ProfilService ) { }
 
   ngOnInit(): void {
-
+  this.ProfileService.affichProfil().subscribe(
+    datas =>{
+      this.profils= datas
+      console.log(datas);
+    }
+  )
     this.form =this.formBuilder.group({
       nom: new FormControl('',[
   
@@ -28,7 +40,7 @@ export class AdduserComponent implements OnInit {
           Validators.required
         ]),
         email: new FormControl('',[
-          Validators.required
+          Validators.required,Validators.email
         ]),
         avatar: new FormControl('',[
          
@@ -36,35 +48,31 @@ export class AdduserComponent implements OnInit {
         profil_id: new FormControl('',[
          
         ]),
-    }) 
+    })  
+  }
+  imageloat=(event: any)=>{
+    this.image=event.target.files[0]
   }
    // convenience getter for easy access to form fields
    get f() { return this.form.controls; }
 
-   onSubmit() {
-       this.submitted = true;
-
-       // stop here if form is invalid
-       if (this.form.invalid) {
-           return;
-       }
-
-       // display form values on success
-       alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.form.value, null, 8));
-   }
 
    onReset() {
        this.submitted = false;
        this.form.reset();
    }
-  ajouUser(data:any){
+   ajouUser(data:any){
+
+    this.submitted = true;
+
     const formdata = new FormData();
     formdata.append('nom',this.form.value['nom'])
     formdata.append('prenom',this.form.value['prenom'])
     formdata.append('email',this.form.value['email'])
-    formdata.append('avatar',this.form.value['avatar'])
+    formdata.append('avatar',this.image)
     formdata.append('profil_id',this.form.value['profil_id'])
     console.log(this.form.value);
+   // this.message = "User"+ this.newUser.newUser + "Ajouter avec success !!";
     this.service.ajoutUser(formdata).subscribe(
       response => {
         console.log(response);
@@ -83,17 +91,17 @@ export class AdduserComponent implements OnInit {
     
   }
   onFormSubmit(form:NgForm){
-this.isValidatFormSubmid = false;
- if(form.valid){
+  this.isValidatFormSubmid = false;
+   if(form.valid){
    this.isValidatFormSubmid =true;
  }
  else{
    return;
  }
- 
+ /*
  let nom=form.controls['nom'].value;
  let prenom=form.controls['prenom'].value;
- let email=form.controls['email'].value;
+ let email=form.controls['email'].value;*/
 
   }
 

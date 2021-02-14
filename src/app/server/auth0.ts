@@ -17,7 +17,8 @@ export class JwtService {
         return this.helper.getTokenExpirationDate(token)
     }
 
-    isTokenExpired(token:string){
+   isTokenExpired(token:string){
         return this.helper.isTokenExpired(token)
-    } 
+    }
+  
 }

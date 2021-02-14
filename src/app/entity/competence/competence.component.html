@@ -15,13 +15,13 @@
 
      <!-- Name Column -->
      <ng-container matColumnDef="descriptif">
-      <p class="the"><th mat-header-cell *matHeaderCellDef> Descriptif </th></p>
+      <p class="the"><th mat-header-cell *matHeaderCellDef> <a href="#">Niveau 1</a><a href="#"> Niveau 2</a> <a href="#">Niveau 3</a> </th></p>
       <td mat-cell *matCellDef="let competance"> {{competance.descriptif}} </td>
     </ng-container> 
 <!-- Name Column -->
 <ng-container matColumnDef="sup">
 <th mat-header-cell *matHeaderCellDef> Supprimer </th>
-<td mat-cell *matCellDef="let competance"> <a (click)=" removePorfilSortie(user.id)"ng-click="alert()"(click)="openModal(modalDel)"><mat-icon>delete_sweep</mat-icon> </a></td>
+<td mat-cell *matCellDef="let competance"> <a (click)="archiveCompetence(competance.id)" ng-click="alert()"(click)="openModal(modalDel)"><mat-icon>delete_sweep</mat-icon> </a></td>
 </ng-container>
 
 <!-- Name Column -->
@@ -34,3 +34,19 @@
   </table>
 <p class="pagi">  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator></p>
 </div>
+
+<ng-template #modalDel let-modal>
+  <div class="modal-header">
+
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+  <h2> Voulez-vous vraiment vous Supprimer ??</h2>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Valider</button>
+  <!--- <button type="button" class="btn btn-primary" (click)="logout()" >Valider</button>-->
+  </div>
+</ng-template>

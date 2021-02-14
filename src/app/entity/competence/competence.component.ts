@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfilService  } from '../../Profil.service';
+import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ProfilService } from 'src/app/Profil.service';
+
 @Component({
   selector: 'app-competence',
   templateUrl: './competence.component.html',
@@ -11,11 +14,11 @@ export class CompetenceComponent implements OnInit {
   dataSource :any; 
   currentUser: any ="";
 
-  constructor(private userservice: ProfilService) { }
+  constructor(private profileService: ProfilService ,private modalService:NgbModal ,private router: Router) { }
 
   ngOnInit(): void {
 
-    this.userservice.affichCompetence().subscribe(
+    this.profileService.affichCompetence().subscribe(
       (response:any)=>
       { 
         this.dataSource=response ['hydra:member'];
@@ -27,6 +30,19 @@ export class CompetenceComponent implements OnInit {
         console.log(error);
       }
     )
+    
   }
-
+  removeCompetence(id: number): void{
+    this.profileService.archiveCompetence(id).subscribe(
+      (data: any ) => {
+        this.currentUser = data;
+        console.log(data);
+      },
+      (error: any) => {
+        console.log(error);
+      });
+  }
+  openModal(content:any){
+    this.modalService.open(content,{ariaLabelledBy:'modal-basic-title',size:'lg'})
+      }
 }

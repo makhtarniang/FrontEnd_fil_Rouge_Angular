@@ -11,9 +11,10 @@ import { FormBuilder, FormGroup, NgForm, Validators } from  '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  form: FormGroup | any;
 
   loginForm: any
-
+  isValidatFormSubmid =false;
   isSubmitted = false;
   submitted = false;
   loginUserData={
@@ -26,10 +27,16 @@ export class LoginComponent implements OnInit {
      
       this.loginForm  =  this.formBuilder.group({
       email: ['', Validators.required],
-      password: ['', Validators.required,Validators.minLength(4)]
+      password: ['', Validators.required]
   });
   }
+  get f() { return this.form.controls; }
+  onReset() {
+    this.submitted = false;
+    this.form.reset();
+}
 loginUser(){
+  this.submitted = true;
   this._auth.loginUser(this.loginUserData)
   .subscribe(
     res =>{
@@ -37,40 +44,27 @@ loginUser(){
       const token=res.token;
 localStorage.setItem('token',token);
 this.rout.navigate(['/footer'])
+console.log(this.form.value);
+
     },
     err=>console.log(err)
   )
 }
-get formControls() { return this.loginForm.controls; }
+onFormSubmit(form:NgForm){
+  this.isValidatFormSubmid = false;
+   if(form.valid){
+   this.isValidatFormSubmid =true;
+ }
+ else{
+   return;
+ }
+ /*
+ let nom=form.controls['nom'].value;
+ let prenom=form.controls['prenom'].value;
+ let email=form.controls['email'].value;*/
 
+  }
 
-onFormSubmit(userForm :NgForm){
-console.log(userForm);
-}
-
-resetUserForm(userForm:NgForm){
-  userForm.resetForm();
-}
-
-    // convenience getter for easy access to form fields
-    get f() { return this.loginForm.controls; }
-
-    onSubmit() {
-        this.submitted = true;
-
-        // stop here if form is invalid
-        if (this.loginForm.invalid) {
-            return;
-        }
-
-        // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.loginForm.value, null, 4));
-    }
-
-    onReset() {
-        this.submitted = false;
-        this.loginForm.reset();
-    }
 }
 
 

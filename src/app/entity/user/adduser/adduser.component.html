@@ -4,28 +4,39 @@
       <div class="form-group" >
           <label for="usr">Nom:</label>
           <input type="text" class="form-control" formControlName="nom" >
+          <span class="alert alert-danger" *ngIf="(f.nom.touched || submitted) && f.nom.errors?.required" > nom is required!</span>
         </div>
+        
         <div class="form-group">
           <label for="pwd">Prenom:</label>
-          <input type="text" class="form-control" formControlName="prenom"[ngClass]="{ 'is-invalid': submitted && f.prenom.errors }">
+          <input type="text" class="form-control" formControlName="prenom">
+          <span class="alert alert-danger" *ngIf="(f.prenom.touched || submitted) && f.prenom.errors?.required" > prenom is required!</span>
+        
         </div>
         <div class="form-group">
           <label for="pwd">Email:</label>
-          <input type="text" class="form-control" formControlName="email"[ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          <input type="text" class="form-control" formControlName="email">
+          <span class="alert alert-danger" *ngIf="(f.email.touched || submitted) && f.email.errors?.required" > email is required!</span>
+         
         </div>
-        <div class="form-group" [ngClass]="{ 'is-invalid': submitted && f.profil_id.errors }">
+        <div class="form-group" >
           <label for="sel1">Profil:</label>
-          <select class="form-control" formControlName="profil_id">
-            <option value="Admin">Admin</option>
-            <option value="Formateur">Formateur</option>
-            <option value="Cm">CM</option>
-            <option value="Apprenant">Apprenant</option>
+          <select   class="form-control" formControlName="profil_id">
+            
+            <option *ngFor="let profil of profils['hydra:member']" value="{{profil.id}}">{{profil.libelle}}</option>
+            
+          
           </select>
+
         </div>
         Avatar:
- <p class="fil"><input (change)="selectedFile($event.target.files,$event)"  type="file" class="form-control" id="customFile" formControlName="avatar"></p>
+ <p class="fil"><input  (change)="imageloat($event)"  type="file" class="form-control" id="customFile" formControlName="avatar"></p>
       <div class="btn">
       <button click="ajouUser()" class="btn btn-secondary">Valider</button>
+
+      </div>
+      <div>
+        <h3>{{message}}</h3>
       </div>
 </form>
 <div class="image">

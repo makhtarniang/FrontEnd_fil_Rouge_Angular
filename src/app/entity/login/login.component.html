@@ -24,7 +24,7 @@
 							</span>
 						</div>
 						<div class="wrap-input100 validate-input" data-validate = "Username is required">		
-				<input [(ngModel)]="loginUserData.email"  class="form-control" [ngClass]="{'is-invalid': submitted && f.email.errors }" class="input100" type="text" placeholder="entrer votre email" name="email" required >
+				<input [(ngModel)]="loginUserData.email"  class="form-control" class="input100" type="text" placeholder="entrer votre email" name="email" required >
 							<span class="focus-input100"></span>
 						</div>
 						<div class="p-t-13 p-b-9">
@@ -38,7 +38,7 @@
 						</div>
 						<div  class="wrap-input100 validate-input" data-validate = "Password is required">
 
-						<input [(ngModel)]="loginUserData.password" [ngClass]="{'is-invalid': submitted && f.password.errors }" class="input100" type="password" placeholder="entrer voter mot de passe" name="password" required>
+						<input [(ngModel)]="loginUserData.password" class="input100" type="password" placeholder="entrer voter mot de passe" name="password" required>
 			
 							<span class="focus-input100"></span>
 						</div>

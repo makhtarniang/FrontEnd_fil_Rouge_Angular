@@ -13,9 +13,11 @@ export class ProfilService {
   }
   affichProfil():any
   {
-    return this.http.get<any>("/api/admin/profils").pipe(tap( data =>{
+    return this.http.get("/api/admin/profils" )
+    
+    /*.pipe(tap( data =>{
       return data;
-    }, err => {}));
+    }, err => {}));*/
   }
   ajoutProfil(data: any):Observable  <any>{
     return this.http.post("/api/admin/profils",data)
@@ -29,7 +31,7 @@ export class ProfilService {
       return this.http.post("/api/admin/profilsorties",data)
     }
 
-    affichProfilSortie():any
+    getProfilSortie():any
   {
     return this.http.get<any>("/api/admin/profilsorties").pipe(tap( data =>{
       return data;
@@ -44,6 +46,16 @@ affichCompetence():any
   return this.http.get<any>("/api/admin/competences").pipe(tap( data =>{
     return data;
   }, err => {}));
+}
+getprofilSortie_by_id(id:number){
+  return this.http.get<any>(`${'api/admin/profilsorties/'}${id}`);
+}
+updatProfilSortie(id:number,DataCue:any){
+  return this.http.put(`${'api/admin/profilsorties/'}${id}`, DataCue);
+
+}
+archiveCompetence(id: number): Observable<any> {
+  return this.http.delete<any>(`${'/api/admin/competences/'}${id}`);
 }
 }
 

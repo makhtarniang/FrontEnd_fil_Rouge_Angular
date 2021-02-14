@@ -13,7 +13,7 @@ export class ProfilSortieComponent implements OnInit {
   currentUser: any ="";
   ngOnInit(): void {
 
-  this.userservice. affichProfilSortie().subscribe(
+  this.userservice.getProfilSortie().subscribe(
     (response:any)=>
     { 
       this.dataSource=response ['hydra:member'];

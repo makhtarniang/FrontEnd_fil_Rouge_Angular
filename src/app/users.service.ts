@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { tap, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FooterComponent } from './footer/footer.component';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,10 +17,14 @@ constructor(private http:HttpClient,private modalService: NgbModal) { }
   }
 
   ajoutUser(data: any):Observable  <any>{
-    return this.http.post ("/api/admin/users",data)
+    return this.http.post ("api/admin/users",data)
   }
-  updatUser(){
-       return this.http.put("/api/admin/users/{id}",DataCue);
+  getUser_by_id(id:number){
+    return this.http.get<any>(`${'api/admin/users/'}${id}`);
+  }
+  updatUser(id:number,DataCue:any){
+       return this.http.put(`${'api/admin/users/'}${id}`, DataCue);
+
   }
   archiveUser(id: number): Observable<any> {
     return this.http.delete<any>(`${'api/admin/user/'}${id}`);
