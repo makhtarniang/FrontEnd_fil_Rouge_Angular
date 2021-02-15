@@ -1,10 +1,17 @@
 
-<div class="h11"><h1>Liste des profils de sortie</h1></div>
-<div class="btn">
-    <a href="footer/addPS">
-        <button type="button" class="btn btn-success">Ajouter Profil Sortie</button>
-    </a>
-</div>
+
+<form class="form" [formGroup]="form"(ngSubmit)="ajoutProfilSortie(form)">
+      <div class="form-group">
+        
+        <p class="imp">   <input type="text" class="form-control" formControlName="libelle" placeholder="saisir le libelle">
+        </p>       
+        </div>
+      <div class="btn">
+          <button click="ajoutProfilSortie()"class="btn btn-secondary">Valider</button>
+      </div>
+</form>
+
+
 <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >     
       <!-- Name Column -->

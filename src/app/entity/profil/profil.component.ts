@@ -27,6 +27,7 @@ ngOnInit(): void {
     }
   )
   }
+  
   constructor(private userservice: ProfilService ){}
     
   }

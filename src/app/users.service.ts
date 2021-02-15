@@ -23,7 +23,7 @@ constructor(private http:HttpClient,private modalService: NgbModal) { }
     return this.http.get<any>(`${'api/admin/users/'}${id}`);
   }
   updatUser(id:number,DataCue:any){
-       return this.http.put(`${'api/admin/users/'}${id}`, DataCue);
+       return this.http.post(`${'api/admin/users/'}${id}`, DataCue);
 
   }
   archiveUser(id: number): Observable<any> {

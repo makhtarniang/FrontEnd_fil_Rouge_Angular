@@ -26,7 +26,7 @@ export class AdduserComponent implements OnInit {
 
   ngOnInit(): void {
   this.ProfileService.affichProfil().subscribe(
-    datas =>{
+    (datas:any) =>{
       this.profils= datas
       console.log(datas);
     }
@@ -76,6 +76,7 @@ export class AdduserComponent implements OnInit {
     this.service.ajoutUser(formdata).subscribe(
       response => {
         console.log(response);
+        this.form.reset();
       }
     );
   }

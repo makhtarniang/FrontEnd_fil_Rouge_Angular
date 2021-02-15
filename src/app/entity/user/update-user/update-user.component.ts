@@ -24,7 +24,7 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.ProfileService.affichProfil().subscribe(
-      datas =>{
+      (datas:any) =>{
         this.profils= datas
         console.log(datas);
       }
@@ -93,10 +93,12 @@ export class UpdateUserComponent implements OnInit {
     formdata.append('avatar',this.image)
     formdata.append('profil_id',this.form.value['profil_id'])
     console.log(this.form.value);
+
    // this.message = "User"+ this.newUser.newUser + "Ajouter avec success !!";
     this.service.updatUser(this.id, formdata).subscribe(
       response => {
         console.log(response);
+        this.form.reset();
       }
     );
   }

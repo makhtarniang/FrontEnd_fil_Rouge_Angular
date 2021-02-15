@@ -11,17 +11,7 @@ export class AddProfilSortisComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,private service:  ProfilService ) { }
   ngOnInit(): void {
 
-    this.form =this.formBuilder.group({
-      libelle: new FormControl('',[
-        Validators.required
-      ]),
-    })
+   
   }
-  ajoutProfilSortie(data:any){
-    this.service.ajoutProfilSortie(this.form.value).subscribe(
-      response => {
-        console.log(response);
-      }
-    );
-  }
+  
 }
